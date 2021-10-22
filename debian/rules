@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DH_VIRTUALENV_INSTALL_ROOT=/opt
+
+export CFLAGS   := $(shell dpkg-buildflags --get CFLAGS)   $(shell dpkg-buildflags --get CPPFLAGS)
+export CXXFLAGS := $(shell dpkg-buildflags --get CXXFLAGS) $(shell dpkg-buildflags --get CPPFLAGS)
+export CPPFLAGS := $(shell dpkg-buildflags --get CXXFLAGS) $(shell dpkg-buildflags --get CPPFLAGS)
+export LDFLAGS  := $(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
+
+%:
+	dh $@ --with python-virtualenv
+
+override_dh_virtualenv:
+	dh_virtualenv --python /usr/bin/python3 --builtin-venv

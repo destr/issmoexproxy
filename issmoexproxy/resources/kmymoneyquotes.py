@@ -2,6 +2,7 @@ from twisted.web import resource
 import json
 import requests
 
+
 class KMyMoneyQuotes(resource.Resource):
     isLeaf = True
     def render_GET(self, request):

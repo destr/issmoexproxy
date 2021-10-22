@@ -1,0 +1,14 @@
+[Unit]
+Description=ISS MOEX proxy service
+After=network.target
+
+[Service]
+User=nobody
+Group=nogroup
+ExecStart=/opt/issmoexproxy/bin/python3 /opt/issmoexproxy/bin/issmoexproxy
+
+RestartSec=5
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
