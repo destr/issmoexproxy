@@ -17,7 +17,7 @@ def main():
         root.putChild(b'quotes', quotes)
 
         site = server.Site(root)
-        reactor.listenTCP(8080, site)
+        reactor.listenTCP(8080, site, interface='127.0.0.1')
 
         reactor.run()
     except KeyboardInterrupt:
