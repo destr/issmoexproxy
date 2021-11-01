@@ -15,8 +15,8 @@ class KMyMoneyQuotes(resource.Resource):
             market = 'bonds'
 
         engine = 'stock'
-        url = "http://iss.moex.com/iss/engines/%(engine)/markets/%(market)/boards/%(board)/securities.json?" \
-              "securities=%(security)" % {"engine": engine, "market": market, "board": board, "security": security}
+        url = "http://iss.moex.com/iss/engines/{engine}/markets/{market}/boards/{board}/securities.json?" \
+              "securities={security}".format(engine=engine, market=market, board=board, security=security)
         print(url)
         data = requests.get(url).json()
         columns = data["securities"]["columns"]
