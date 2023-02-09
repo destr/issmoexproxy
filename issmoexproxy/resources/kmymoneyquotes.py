@@ -20,10 +20,11 @@ class KMyMoneyQuotes(resource.Resource):
         print(url)
         data = requests.get(url).json()
         columns = data["securities"]["columns"]
-        # PREVADMITTEDQUOTE - цена закрытия
+        # PREVADMITTEDQUOTE - Признаваемая котировка предыдущего дня
+        # PREVLEGALCLOSEPRICE - Цена закрытия предыдущего дня
         # SECID -
         # PREVDATE - даты цены закрытия
-        index_price = columns.index('PREVADMITTEDQUOTE')
+        index_price = columns.index('PREVLEGALCLOSEPRICE')
         index_date = columns.index('PREVDATE')
         index_id = columns.index('SECID')
 
