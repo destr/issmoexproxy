@@ -1,3 +1,7 @@
+issmoexproxy (0.0.2-1) unstable; urgency=low
+  * 0.0.2: Изменено поле получения цены инструмента с PREVADMITTEDQUOTE на
+      PREVLEGALCLOSEPRICE (т.к. API moex перестало отдавать admittedquote)
+
 issmoexproxy (0.0.1-1) unstable; urgency=low
   * 0.0.1: Debianization
   
