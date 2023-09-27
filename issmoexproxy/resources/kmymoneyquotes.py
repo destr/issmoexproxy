@@ -28,8 +28,12 @@ class KMyMoneyQuotes(resource.Resource):
         index_date = columns.index('PREVDATE')
         index_id = columns.index('SECID')
 
-        sec = data["securities"]["data"][0]
+        d = data["securities"]["data"]
+        ret = ''
+        if not d:
+            return ret.encode()
 
+        sec = d[0]
         ret = 'date={0} price={1} id={2}'.format(sec[index_date], sec[index_price], sec[index_id])
         return ret.encode()
 
