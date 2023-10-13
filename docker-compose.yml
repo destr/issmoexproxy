@@ -6,4 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     image: issmoexproxy-build
+    volumes:
+      - .:/root
 
