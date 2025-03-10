@@ -8,4 +8,6 @@ services:
     image: issmoexproxy-build
     volumes:
       - .:/root
+    command: >
+      bash -c '/root/build.sh && exit'
 
