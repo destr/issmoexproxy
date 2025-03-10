@@ -8,6 +8,9 @@ class KMyMoneyQuotes(resource.Resource):
     def render_GET(self, request):
         board, security = request.postpath[0].decode().split(':')
 
+        headers = {'User-Agent': 
+                   'Mozilla/5.0 (X11; Linux i686; rv:124.0) Gecko/20100101 Firefox/124.0'}
+
         # /iss/engines/[engine]/markets/[market]/boards/[board]/securities/[security]
         market = 'shares'
 
@@ -18,7 +21,7 @@ class KMyMoneyQuotes(resource.Resource):
         url = "http://iss.moex.com/iss/engines/{engine}/markets/{market}/boards/{board}/securities.json?" \
               "securities={security}".format(engine=engine, market=market, board=board, security=security)
         print(url)
-        data = requests.get(url).json()
+        data = requests.get(url, headers=headers).json()
         columns = data["securities"]["columns"]
         # PREVADMITTEDQUOTE - Признаваемая котировка предыдущего дня
         # PREVLEGALCLOSEPRICE - Цена закрытия предыдущего дня
