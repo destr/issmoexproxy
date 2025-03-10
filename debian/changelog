@@ -1,5 +1,9 @@
+issmoexproxy (0.0.4-1) unstable; urgency=low
+  * 0.0.4: Добавлен header User-Agent при запросе к moex
+ -- destr <destrd@gmail.com>  Mon, 10 Mar 2025 09:01:42 +0400
+
 issmoexproxy (0.0.3-1) unstable; urgency=low
-  * 0.0.3: Исправлена ошибка получения пустых котировок\
+  * 0.0.3: Исправлена ошибка получения пустых котировок
  -- destr <destrd@gmail.com>  Sat, 07 Oct 2023 13:50:14 +0400
 
 issmoexproxy (0.0.2-1) unstable; urgency=low
